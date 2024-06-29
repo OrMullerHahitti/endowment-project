@@ -8,11 +8,11 @@ def generate_random_preferences(num_agents):
     """
     Generate random preferences for each agent.
 
-    Parameters:
-    num_agents (int): Number of agents.
+   
+    num_agents -Number of agents.
 
     Returns:
-    dict: Random preferences for each agent.
+    dict: Random preferences for each agent. +writes a graph 
     """
     preferences = {}
     agents = list(range(num_agents))
@@ -71,7 +71,7 @@ def top_trading_cycle(agents, preferences, save_intermediate=False):
                     pref.remove(next_agent)
             agents.remove(agent)
 
-    # Save the final graph to a GEXF file
+   
     final_file_path = "top_trading_cycle_final.gexf"
     nx.write_gexf(G, final_file_path)
     pos = nx.spring_layout(G)  # or use any other layout like nx.circular_layout(G)
